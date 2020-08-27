@@ -9,7 +9,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    background-color: #4d4d4d;
+    background-color: #6d6e72;
     height: 50%;
     width: 50%;
     top: 200px;
@@ -18,11 +18,13 @@
 }
 
 .Note {
-    color: darkgray;
+    color: #c5c6c7;
+    cursor: pointer;
 }
 
 .textDiv, .Header {
-    padding: 5px;
+    padding: 10px;
+    color: #adafb3;
 }
 
 .Content {
@@ -32,15 +34,23 @@
 }
 
 input {
-    background-color: gray;
-    cursor: pointer;
-    border: solid black;
+    background-color: #8e9297;
+    border: solid #393939;
     box-shadow: 1px 2px;
     padding-left: 100px;
     color: #4d4d4d;
 }
 
+input:focus {
+    background-color: #f0fef0;
+}
+
+button {
+    /*background-color: red;*/
+    padding: 5px;
+}
+
 body {
-    background-color: #555555;
+    background-color: #4b4b4d;
     height: 100%;
 }

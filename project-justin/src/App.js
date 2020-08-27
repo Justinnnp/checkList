@@ -17,25 +17,22 @@ class App extends Component {
     }
 
     addNote() {
-        if (this.state.noteText === '') {
-            return console.log("error!");
-        }
-
         let notesArr = this.state.notes;
+        if (this.state.noteText === '') return;
         notesArr.push(this.state.noteText);
         this.setState({noteText: ''});
         this.textInput.focus();
+
     }
 
     handleKeyPress = (event) => {
         if (event.key === 'Enter') {
             let notesArr = this.state.notes;
+            if (this.state.noteText === '') return;
             notesArr.push(this.state.noteText);
             this.setState({noteText: ''});
-            if (this.state.noteText === '') {
-                return console.log("error!");
-            }
         }
+
     }
 
     deleteNote(index) {
@@ -44,11 +41,18 @@ class App extends Component {
         this.setState({notes: notesArr})
     }
 
+    deleteArray() {
+            this.setState({
+                notes: []
+            })
+    }
+
     render() {
 
         let notes = this.state.notes.map((val, key) => {
-            return <Note key={key} text={val}
-                         deleteMethod={() => this.deleteNote(key)}/>
+            return <Note
+                key={key} text={val}
+                deleteMethod={() => this.deleteNote(key)}/>
         });
 
         return (
@@ -57,7 +61,8 @@ class App extends Component {
                     <div className="Header">
                         <h1>Todo List</h1>
                     </div>
-                    <button onClick={this.addNote.bind(this)}>➕</button>
+                    <button onClick={this.addNote.bind(this)}>Add item</button>
+                    <button onClick={this.deleteArray.bind(this)}>Delete list</button>
                     <div className="textDiv">
                         <input type="text"
                                ref={(input => {
