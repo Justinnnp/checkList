@@ -16,9 +16,9 @@ class App extends Component {
         this.setState({noteText: noteText.target.value})
     }
 
-    addNote() {
+    addNote(event) {
         let notesArr = this.state.notes;
-        if (this.state.noteText === '') return;
+        if (this.state.noteText === '') return alert("Enter a character");
         notesArr.push(this.state.noteText);
         this.setState({noteText: ''});
         this.textInput.focus();
@@ -28,7 +28,7 @@ class App extends Component {
     handleKeyPress = (event) => {
         if (event.key === 'Enter') {
             let notesArr = this.state.notes;
-            if (this.state.noteText === '') return;
+            if (this.state.noteText === '') return alert("Enter a character");
             notesArr.push(this.state.noteText);
             this.setState({noteText: ''});
         }
@@ -45,6 +45,7 @@ class App extends Component {
         this.setState({
             notes: []
         })
+        return alert("You deleted your list");
     }
 
     render() {
