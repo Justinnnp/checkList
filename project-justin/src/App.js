@@ -42,9 +42,9 @@ class App extends Component {
     }
 
     deleteArray() {
-            this.setState({
-                notes: []
-            })
+        this.setState({
+            notes: []
+        })
     }
 
     render() {
@@ -61,8 +61,14 @@ class App extends Component {
                     <div className="Header">
                         <h1>Todo List</h1>
                     </div>
-                    <button onClick={this.addNote.bind(this)}>Add item</button>
-                    <button onClick={this.deleteArray.bind(this)}>Delete list</button>
+                    <div className="btns">
+                        <div className="btn1">
+                            <button onClick={this.addNote.bind(this)}>Add item</button>
+                        </div>
+                        <div className="btn2">
+                            <button onClick={this.deleteArray.bind(this)}>Remove list</button>
+                        </div>
+                    </div>
                     <div className="textDiv">
                         <input type="text"
                                ref={(input => {
@@ -74,7 +80,9 @@ class App extends Component {
                                onKeyPress={this.handleKeyPress.bind(this)}
                         />
                     </div>
-                    {notes}
+                    <div className="notes">
+                        {notes}
+                    </div>
                 </div>
             </div>
         );

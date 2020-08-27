@@ -17,9 +17,28 @@
     position: absolute;
 }
 
+.notes {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-collapse: collapse;
+    width: 100%;
+}
+
 .Note {
     color: #c5c6c7;
     cursor: pointer;
+    border: 1px solid black;
+    width: 20%;
+    align-self: center;
+}
+
+.Note:after {
+    padding: 10px;
+}
+
+.Note:hover {
+    font-size: 30px;
 }
 
 .textDiv, .Header {
@@ -39,15 +58,29 @@ input {
     box-shadow: 1px 2px;
     padding-left: 100px;
     color: #4d4d4d;
+    border-radius: 10px;
 }
 
 input:focus {
     background-color: #f0fef0;
+    border-radius: 10px;
 }
 
 button {
-    /*background-color: red;*/
-    padding: 5px;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.btns {
+    /*width: 100%;*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn1, .btn2 {
+    padding: 0px 5px 0px 0px;
+    border-radius: 10%;
 }
 
 body {
